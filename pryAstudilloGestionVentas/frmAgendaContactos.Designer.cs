@@ -131,7 +131,7 @@
             // 
             mktNumero.Enabled = false;
             mktNumero.Location = new Point(179, 166);
-            mktNumero.Mask = "k";
+            mktNumero.Mask = "(351)000-0000";
             mktNumero.Name = "mktNumero";
             mktNumero.Size = new Size(100, 23);
             mktNumero.TabIndex = 9;
