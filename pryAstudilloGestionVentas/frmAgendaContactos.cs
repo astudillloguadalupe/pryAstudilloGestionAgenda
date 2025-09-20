@@ -24,6 +24,9 @@ namespace pryAstudilloGestionVentas
         DateTime vFecha = DateTime.Now;
         //DECLARO UN VECTOR CONTACTOS Y NUMEROS
         string[] vecContactos = new string[5];
+        string[] vecTelofono = new string[5];
+        // INDICE PARA EL VECTOR
+        int Indice = 0;
 
         private void txtContacto_TextChanged(object sender, EventArgs e)
         {
@@ -36,6 +39,8 @@ namespace pryAstudilloGestionVentas
                 mktNumero.Enabled = false;
             }
         }
+
+
 
         private void mktNumero_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -55,16 +60,17 @@ namespace pryAstudilloGestionVentas
         {
             vContactos = txtContacto.Text;
             vNumero = mktNumero.Text;
-            lstResultado.Items.Add("Contacto" + vContactos + "Numero:" + vNumero);
-            //lIMPIAR CONTROLES
-            txtContacto.Text = "";
-            mktNumero.Text = "";
-            vContador = vContador + 1;
-            lblCantidad.Text = "Cantidad de contactos:" + vContactos;
-            lblFechaHora.Text = "Fecha y Hora:" + vFecha;
-            vecContactos[indice] = vContactos;
-            indice++;
+            vecContactos[Indice] = txtContacto.Text;
+            vecTelofono[Indice] = mktNumero.Text;
 
+            lstResultado.Items.Add("Contacto:" + " " + vecContactos[Indice] + " - " + "Numero:" + " " + vecTelofono[Indice]);
+            vContador = vContador + 1;
+            lblCantidad.Text = "Cantidad de Contactos:" + " " + vContador;
+            lblFechaHora.Text = "Fecha y Hora:" + " " + vFecha;
+            txtContacto.Focus();
+
+            Indice++;
+            LimpiarControles();
         }
 
         private void frmAgendaContactos_Load(object sender, EventArgs e)
@@ -73,6 +79,29 @@ namespace pryAstudilloGestionVentas
         }
 
         private void lblCantidad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LimpiarControles()
+        {
+            txtContacto.Clear();
+            mktNumero.Clear();
+            txtContacto.Focus();
+            
+            
+        }
+  
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Cancelar el registro?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                LimpiarControles();
+               
+            }
+        }
+
+        private void lstResultado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

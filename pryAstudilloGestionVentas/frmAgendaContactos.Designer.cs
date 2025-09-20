@@ -48,7 +48,7 @@
             lblNumero.Location = new Point(28, 174);
             lblNumero.Name = "lblNumero";
             lblNumero.Size = new Size(51, 15);
-            lblNumero.TabIndex = 0;
+            lblNumero.TabIndex = 2;
             lblNumero.Text = "Numero";
             // 
             // lblContacto
@@ -94,7 +94,7 @@
             btnAgendar.Location = new Point(124, 251);
             btnAgendar.Name = "btnAgendar";
             btnAgendar.Size = new Size(75, 23);
-            btnAgendar.TabIndex = 5;
+            btnAgendar.TabIndex = 2;
             btnAgendar.Text = "&Agendar";
             btnAgendar.UseVisualStyleBackColor = true;
             btnAgendar.Click += btnAgendar_Click;
@@ -107,6 +107,7 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnListar
             // 
@@ -124,17 +125,18 @@
             lstResultado.ItemHeight = 15;
             lstResultado.Location = new Point(12, 318);
             lstResultado.Name = "lstResultado";
-            lstResultado.Size = new Size(267, 92);
+            lstResultado.Size = new Size(494, 107);
             lstResultado.TabIndex = 8;
+            lstResultado.SelectedIndexChanged += lstResultado_SelectedIndexChanged;
             // 
             // mktNumero
             // 
             mktNumero.Enabled = false;
             mktNumero.Location = new Point(179, 166);
-            mktNumero.Mask = "k";
+            mktNumero.Mask = "(351)000-0000";
             mktNumero.Name = "mktNumero";
             mktNumero.Size = new Size(100, 23);
-            mktNumero.TabIndex = 9;
+            mktNumero.TabIndex = 1;
             mktNumero.MaskInputRejected += mktNumero_MaskInputRejected;
             // 
             // txtContacto
@@ -142,7 +144,7 @@
             txtContacto.Location = new Point(179, 91);
             txtContacto.Name = "txtContacto";
             txtContacto.Size = new Size(100, 23);
-            txtContacto.TabIndex = 10;
+            txtContacto.TabIndex = 0;
             txtContacto.TextChanged += txtContacto_TextChanged;
             // 
             // frmAgendaContactos
@@ -163,6 +165,7 @@
             Controls.Add(lblNumero);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAgendaContactos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAgendaContactos";
             Load += frmAgendaContactos_Load;
             ResumeLayout(false);
