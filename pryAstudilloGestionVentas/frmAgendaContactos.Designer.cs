@@ -63,17 +63,18 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
+            lblTitulo.BorderStyle = BorderStyle.Fixed3D;
             lblTitulo.Font = new Font("Footlight MT Light", 15.75F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(184, 32);
+            lblTitulo.Location = new Point(153, 29);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(178, 22);
+            lblTitulo.Size = new Size(180, 24);
             lblTitulo.TabIndex = 2;
             lblTitulo.Text = "Agenda de contacto";
             // 
             // lblFechaHora
             // 
             lblFechaHora.AutoSize = true;
-            lblFechaHora.Location = new Point(337, 447);
+            lblFechaHora.Location = new Point(236, 447);
             lblFechaHora.Name = "lblFechaHora";
             lblFechaHora.Size = new Size(76, 15);
             lblFechaHora.TabIndex = 3;
@@ -82,7 +83,7 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(85, 447);
+            lblCantidad.Location = new Point(24, 447);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(55, 15);
             lblCantidad.TabIndex = 4;
@@ -91,7 +92,7 @@
             // 
             // btnAgendar
             // 
-            btnAgendar.Location = new Point(124, 251);
+            btnAgendar.Location = new Point(48, 251);
             btnAgendar.Name = "btnAgendar";
             btnAgendar.Size = new Size(75, 23);
             btnAgendar.TabIndex = 2;
@@ -101,22 +102,23 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(262, 251);
+            btnCancelar.Location = new Point(193, 251);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 6;
+            btnCancelar.TabIndex = 3;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(417, 251);
+            btnListar.Location = new Point(327, 251);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(75, 23);
-            btnListar.TabIndex = 7;
+            btnListar.TabIndex = 4;
             btnListar.Text = "&Listar";
             btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
             // 
             // lstResultado
             // 
@@ -125,25 +127,25 @@
             lstResultado.ItemHeight = 15;
             lstResultado.Location = new Point(12, 318);
             lstResultado.Name = "lstResultado";
-            lstResultado.Size = new Size(494, 107);
-            lstResultado.TabIndex = 8;
+            lstResultado.Size = new Size(472, 107);
+            lstResultado.TabIndex = 5;
             lstResultado.SelectedIndexChanged += lstResultado_SelectedIndexChanged;
             // 
             // mktNumero
             // 
             mktNumero.Enabled = false;
-            mktNumero.Location = new Point(179, 166);
+            mktNumero.Location = new Point(140, 166);
             mktNumero.Mask = "(351)000-0000";
             mktNumero.Name = "mktNumero";
-            mktNumero.Size = new Size(100, 23);
+            mktNumero.Size = new Size(193, 23);
             mktNumero.TabIndex = 1;
             mktNumero.MaskInputRejected += mktNumero_MaskInputRejected;
             // 
             // txtContacto
             // 
-            txtContacto.Location = new Point(179, 91);
+            txtContacto.Location = new Point(140, 86);
             txtContacto.Name = "txtContacto";
-            txtContacto.Size = new Size(100, 23);
+            txtContacto.Size = new Size(193, 23);
             txtContacto.TabIndex = 0;
             txtContacto.TextChanged += txtContacto_TextChanged;
             // 
@@ -151,7 +153,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(537, 482);
+            ClientSize = new Size(492, 482);
             Controls.Add(txtContacto);
             Controls.Add(mktNumero);
             Controls.Add(lstResultado);
@@ -163,6 +165,7 @@
             Controls.Add(lblTitulo);
             Controls.Add(lblContacto);
             Controls.Add(lblNumero);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAgendaContactos";
             StartPosition = FormStartPosition.CenterScreen;

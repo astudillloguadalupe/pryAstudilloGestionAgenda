@@ -68,7 +68,7 @@ namespace pryAstudilloGestionVentas
             lblCantidad.Text = "Cantidad de Contactos:" + " " + vContador;
             lblFechaHora.Text = "Fecha y Hora:" + " " + vFecha;
             txtContacto.Focus();
-
+            
             Indice++;
             LimpiarControles();
         }
@@ -88,20 +88,25 @@ namespace pryAstudilloGestionVentas
             txtContacto.Clear();
             mktNumero.Clear();
             txtContacto.Focus();
-            
-            
+
+
         }
-  
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Desea Cancelar el registro?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 LimpiarControles();
-               
+
             }
         }
 
         private void lstResultado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
         {
 
         }
